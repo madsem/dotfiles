@@ -67,6 +67,13 @@ git clone https://github.com/madsem/valet-global-env.git
 cd ~
 
 # installing PHP extensions
+
+# create pecl dir if it doesn't exist
+# ref: https://github.com/Homebrew/homebrew-core/issues/41081#issuecomment-503256871
+if [ ! -d /usr/local/lib/php/pecl ]; then
+  mkdir -p /usr/local/lib/php/pecl
+fi
+
 echo "Install imagick, accepting defaults"
 yes '' | pecl install -f imagick
 
