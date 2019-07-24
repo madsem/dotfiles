@@ -8,9 +8,9 @@ tap "homebrew/cask-fonts"
 
 # Brew
 brew "fish"
+brew "php", restart_service: true, link: true
 brew "php@7.1"
 brew "php@7.2"
-brew "php@7.3", restart_service: true, link: true
 brew "libyaml"
 brew "autoconf"
 brew "composer"
