@@ -49,6 +49,10 @@ brew cleanup
 #
 ################################################################################
 
+# add composer to PATH for the duration of this installer
+echo "Adding Composer To PATH"
+export PATH=$PATH:~/.composer/vendor/bin
+
 # Laravel Installer, Valet etc.
 echo "Creating Laravel Installers"
 composer global require laravel/installer laravel/spark-installer laravel/valet
@@ -63,17 +67,17 @@ git clone https://github.com/madsem/valet-global-env.git
 cd ~
 
 # installing PHP extensions
-echo "Install imagick"
-pecl install imagick
+echo "Install imagick, accepting defaults"
+yes '' | pecl install -f imagick
 
-echo "Install memcached"
-pecl install memcached
+echo "Install memcached, accepting defaults"
+yes '' | pecl install -f memcached
 
-echo "Install xdebug"
-pecl install xdebug
+echo "Install xdebug, accepting defaults"
+yes '' | pecl install -f xdebug
 
-echo "Install Phpredis"
-pecl install redis
+echo "Install Phpredis, accepting defaults"
+yes '' | pecl install -f redis
 
 
 ################################################################################
@@ -93,8 +97,10 @@ done
 #
 ################################################################################
 echo "Making Fish The Default Shell..."
-echo $(which fish) | sudo tee -a /etc/shells
-sudo chsh -s $(which fish) ${USER}
+if ! sudo cat /etc/shells | grep -xqFe "$(which fish)"; then
+  echo $(which fish) | sudo tee -a /etc/shells
+  sudo chsh -s $(which fish) ${USER}
+fi
 
 
 ################################################################################
@@ -147,8 +153,8 @@ fi
 #
 ################################################################################
 echo "Installing macOS Defaults"
-source .macdock
-source .macos
+source ~/.config/dotfiles/prefs/macos/.macdock
+source ~/.config/dotfiles/prefs/macos/.macos
 
 
 echo "You should restart your machine now and then continue with the setup."
