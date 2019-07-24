@@ -20,9 +20,6 @@ else
 
     echo "Cloning Dotfiles..."
 
-    mkdir -p "$TARGET"
-    mkdir -p "$TMP_TARGET"
-
     git clone --separate-git-dir=$TARGET $SOURCE $TMP_TARGET
     rsync --recursive --verbose --exclude '.git' $TMP_TARGET/ $HOME/
     rm -r $TMP_TARGET
