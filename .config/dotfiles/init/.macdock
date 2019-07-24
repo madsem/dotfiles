@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+dockutil --no-restart --remove all
+dockutil --no-restart --add "/Applications/Tunnelblick.app"
+dockutil --no-restart --add "/Applications/Safari.app"
+dockutil --no-restart --add "/Applications/Google Chrome.app"
+dockutil --no-restart --add "/Applications/Firefox.app"
+dockutil --no-restart --add "/Applications/Opera.app"
+dockutil --no-restart --add "/Applications/PhpStorm.app"
+dockutil --no-restart --add "/Applications/Visual Studio Code.app"
+dockutil --no-restart --add "/Applications/Sequel Pro.app"
+dockutil --no-restart --add "/Applications/iTerm.app"
+dockutil --no-restart --add "/Applications/System Preferences.app"
+
+killall Dock

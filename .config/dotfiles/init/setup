@@ -1,0 +1,151 @@
+#!/usr/bin/env bash
+
+echo "Setting up your Mac..."
+
+# Check for Homebrew and abort if we don't have it
+if test ! $(which brew); then
+
+  echo "You need to run the remote-install.sh script first, aborting..."
+  exit 1
+
+fi
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until setup has finished
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
+
+# Hide "last login" line when starting a new terminal session
+echo "Creating Hushlogin"
+touch $HOME/.hushlogin
+
+# run mac software update
+echo "Updating Your Mac"
+sudo softwareupdate -i -a
+
+
+################################################################################
+#
+# Brewfile
+#
+################################################################################
+echo "Brewing..."
+brew update
+brew tap homebrew/bundle
+brew bundle --file=~/.config/dotfiles/prefs/Homebrew/Brewfile
+brew cleanup
+
+
+################################################################################
+#
+# PHP related packages & software
+#
+################################################################################
+
+# Laravel Installer, Valet etc.
+echo "Creating Laravel Installers"
+composer global require laravel/installer laravel/spark-installer laravel/valet
+
+# run valet installer
+echo "Installing Laravel Valet"
+valet install
+
+echo "Cloning custom Global-Env Valet driver"
+git clone https://github.com/madsem/valet-global-env.git ~/.config/valet/Drivers
+
+# installing PHP extensions
+echo "Install imagick"
+pecl install imagick
+
+echo "Install memcached"
+pecl install memcached
+
+echo "Install xdebug"
+pecl install xdebug
+
+echo "Install Phpredis"
+pecl install redis
+
+
+################################################################################
+#
+# Install Visual Studio Code Extensions
+#
+################################################################################
+echo "Installing VS Code Extensions"
+for EXT in $(cat ~/.config/dotfiles/prefs/VisualStudioCode/extensions); do
+  code --install-extension $EXT
+done
+
+
+################################################################################
+#
+# Fish Shell
+#
+################################################################################
+echo "Making Fish The Default Shell..."
+echo $(which fish) | sudo tee -a /etc/shells
+sudo chsh -s $(which fish) ${USER}
+
+
+################################################################################
+#
+# iTerm2
+#
+################################################################################
+echo "Installing iTerm2 Shell Integration"
+curl -L https://iterm2.com/shell_integration/fish \
+  -o ~/.iterm2_shell_integration.fish
+
+
+################################################################################
+#
+# Creating directories & Files
+#
+################################################################################
+echo "Creating ~/Sites"
+if [ ! -d ~/Sites/ ]; then
+  mkdir ~/Sites/
+fi
+
+echo "Creating config file for Global-Env Valet driver"
+cat << 'VALET' > ~/Sites/.valet-env.php
+<?php
+
+/**
+ * global ENV vars
+ * Requires custom ValetDriver
+ * https://github.com/madsem/global-env-valet-driver
+ **/
+
+return [
+
+	'*' => [
+		'key' => 'value',
+	],
+
+];
+VALET
+
+echo "Creating ~/Code"
+if [ ! -d ~/Code/ ]; then
+  mkdir ~/Code/
+fi
+
+################################################################################
+#
+# macOS defaults
+#
+################################################################################
+echo "Installing macOS Defaults"
+source .macdock
+source .macos

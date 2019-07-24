@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<!--- Run 'mackup -f backup' daily -->
+<dict>
+    <key>Label</key>
+    <string>dotfiles.mackup</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/mackup</string>
+        <string>-f</string>
+        <string>backup</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>22</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+    <key>KeepAlive</key>
+    <true/>
+</dict>
+</plist>

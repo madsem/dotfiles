@@ -1,0 +1,7 @@
+.dotfiles # prevent recursion issues
+.idea
+.DS_Store
+.secrets
+.ssh
+.aws/config
+.gitconfig
