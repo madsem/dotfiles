@@ -59,6 +59,13 @@ function aws_export_ssh_key --description '<path> <region>'
         --output text \
         --region $region | base64 --decode >>$privateKey
 
+    # if we get an error here, means the aws profile does not have sufficient privileges
+    if test $status -ne 0
+        echo "Your AWS profile does not seem to have sufficient privileges. aborting..."
+        rm $privateKey
+        return 1
+    end
+
     # create public key from private key
     echo "Please enter password for this SSH key:"
     ssh-keygen -y -f $privateKey >$publicKey
