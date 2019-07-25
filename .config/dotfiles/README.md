@@ -35,7 +35,7 @@ $ ~/.config/dotfiles/setup
 
 4. Now restore mackup's backup:  
 ```shell
-$ mackup restore
+$ mackup -fv restore
 ```
 
 5. Copy Launch Agents:  
@@ -172,11 +172,15 @@ mfa_serial=arn:aws:iam::XXXXXXXXXXXXX:mfa/myaccount-user
 
 # admin role account 1
 [profile account_1_admin]
+output=json
+region=us-east-1
 source_profile=master_read_only
 role_arn=arn:aws:iam::XXXXXXXXXXXXX:role/admin
 
 # admin role account 2
 [profile account_2_admin]
+output=json
+region=us-east-1
 source_profile=master_read_only
 role_arn=arn:aws:iam::YYYYYYYYYYYYY:role/admin
 ```
