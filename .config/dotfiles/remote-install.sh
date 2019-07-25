@@ -32,6 +32,6 @@ else
 
     # we're done
     echo "Dotfiles repository installed at ${HOME}/.dotfiles & work-tree at ${HOME}"
-    echo "Use 'dotfiles' instead of 'git' command to manage."
+    echo "Use 'dot' instead of 'git' command to manage."
 
 fi

@@ -66,7 +66,7 @@ I want to have everything up & running in no time, and most things to just work 
 
 The dotfiles are created as a bare repository in `$HOME/.dotfiles` and use `$HOME` as working directory.
 This has the advantage that absolutely no symlinks are needed to manage your dotfiles.  
-Instead of using the `git` command, you need to manage your dotfiles with a `dotfiles` fish function, that wraps `git` and sets the correct `--work-tree & --git-dir` options. 
+Instead of using the `git` command, you need to manage your dotfiles with a `dot` fish function, that wraps `git` and sets the correct `--work-tree & --git-dir` options. 
 
 _The only drawback is, that only hidden files/dirs should exist in the repo's root, otherwise they would show up in your $HOME folder_
 
@@ -76,23 +76,23 @@ _The only drawback is, that only hidden files/dirs should exist in the repo's ro
 # Day To Day
 This is where the fun starts! Since there are no symlinks, you can just work with your dotfiles without having to remember to run an update script for symlinks etc.
 
-The only thing you need to remember, is to use the `dotfiles` function, instead of the `git` command. You can run this from anywhere on your machine also.  
+The only thing you need to remember, is to use the `dot` function, instead of the `git` command. You can run this from anywhere on your machine also.  
 
 Now all you have to do is to add & push changes, so your dotfiles are always up to date.  
 
 Examples:
 ```shell
-$ dotfiles status
+$ dot status
 
 # add something new to your dotfiles
-$ dotfiles add ~/.screenrc
-$ dotfiles commit -m "added .screenrc"
-$ dotfiles push
+$ dot add ~/.screenrc
+$ dot commit -m "added .screenrc"
+$ dot push
 
 # add changes to tracked files & push to github
-$ dotfiles add .
-$ dotfiles commit -m "added updates"
-$ dotfiles push
+$ dot add .
+$ dot commit -m "added updates"
+$ dot push
 ```
 
 ## Automation

@@ -1,6 +1,6 @@
 # manage the dotfiles repository, wraps git command 
 # and includes options to run .macos & .macdock files separately
-function dotfiles -a cmd -d 'dotfiles [any git command] | [macos] install .macos file | [dock] install .macdock file' --wraps git
+function dot -a cmd -d 'dot [any git command] | [macos] install .macos file | [dock] install .macdock file' --wraps git
 
     switch "$cmd"
         case macos
