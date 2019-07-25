@@ -30,7 +30,6 @@ touch $HOME/.hushlogin
 echo "Updating Your Mac"
 sudo softwareupdate -i -a
 
-
 ################################################################################
 #
 # Brewfile
@@ -41,7 +40,6 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file=~/.config/dotfiles/prefs/Homebrew/Brewfile
 brew cleanup
-
 
 ################################################################################
 #
@@ -62,9 +60,11 @@ echo "Installing Laravel Valet"
 valet install
 
 echo "Cloning custom Global-Env Valet driver"
-cd ~/.config/valet/Drivers
-git clone https://github.com/madsem/valet-global-env.git
-cd ~
+if [ ! -d ~/.config/valet/Drivers/valet-global-env ]; then
+  cd ~/.config/valet/Drivers
+  git clone https://github.com/madsem/valet-global-env.git
+  cd ~
+fi
 
 # installing PHP extensions
 
@@ -86,7 +86,6 @@ yes '' | pecl install -f xdebug
 echo "Install Phpredis, accepting defaults"
 yes '' | pecl install -f redis
 
-
 ################################################################################
 #
 # Install Visual Studio Code Extensions
@@ -96,7 +95,6 @@ echo "Installing VS Code Extensions"
 for EXT in $(cat ~/.config/dotfiles/prefs/VisualStudioCode/extensions); do
   code --install-extension $EXT
 done
-
 
 ################################################################################
 #
@@ -109,7 +107,6 @@ if ! sudo cat /etc/shells | grep -xqFe "$(which fish)"; then
   sudo chsh -s $(which fish) ${USER}
 fi
 
-
 ################################################################################
 #
 # iTerm2
@@ -118,7 +115,6 @@ fi
 echo "Installing iTerm2 Shell Integration"
 curl -L https://iterm2.com/shell_integration/fish \
   -o ~/.iterm2_shell_integration.fish
-
 
 ################################################################################
 #
@@ -131,7 +127,7 @@ if [ ! -d ~/Sites/ ]; then
 fi
 
 echo "Creating config file for Global-Env Valet driver"
-cat << 'VALET' > ~/Sites/.valet-env.php
+cat <<'VALET' >~/Sites/.valet-env.php
 <?php
 
 /**
@@ -162,6 +158,5 @@ fi
 echo "Installing macOS Defaults"
 source ~/.config/dotfiles/prefs/macos/.macdock
 source ~/.config/dotfiles/prefs/macos/.macos
-
 
 echo "You should restart your machine now and then continue with the setup."
