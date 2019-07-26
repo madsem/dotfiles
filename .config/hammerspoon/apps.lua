@@ -10,6 +10,7 @@ hs.hotkey.bind(hyper, "return", function() toggleApplication("System Preferences
 hs.hotkey.bind(hyper, "z", function() toggleApplication("iTunes") end)
 hs.hotkey.bind(hyper, "x", function() toggleApplication("Screen Sharing") end)
 hs.hotkey.bind(hyper, "e", function() toggleApplication("TextEdit") end)
+hs.hotkey.bind(hyper, ";", function() toggleApplication("Screenshot") end)
 
 --- messengers
 hs.hotkey.bind(hyper, "\\", function() toggleApplication("Skype") end)

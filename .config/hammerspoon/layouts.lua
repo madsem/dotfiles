@@ -32,7 +32,7 @@ local devLayout = {
   { 'iTerm2', nil, activeDisplay, hs.layout.right40, nil, nil },
   { 'Google Chrome', nil, activeDisplay, hs.layout.right40, nil, nil },
 }
-hs.hotkey.bind(hyper, 'f1', function() toggleWorkspace(devApps, devLayout) end)
+hs.hotkey.bind(hyper, '1', function() toggleWorkspace(devApps, devLayout) end)
 
 --- communication
 local commApps = {
@@ -46,5 +46,5 @@ local commLayout = {
     { 'Skype', nil, activeDisplay, hs.layout.topRight, nil, nil },
     { 'Messages', nil, activeDisplay, hs.layout.bottomRight, nil, nil },
   }
-  hs.hotkey.bind(hyper, 'f2', function() toggleWorkspace(commApps, commLayout) end)
+  hs.hotkey.bind(hyper, '2', function() toggleWorkspace(commApps, commLayout) end)
   

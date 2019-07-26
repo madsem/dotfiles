@@ -1,78 +1,68 @@
-# Open New Taps
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "homebrew/cask-fonts"
-
-
-# Brew
-brew "fish"
-brew "php", restart_service: true, link: true
-brew "php@7.1"
-brew "php@7.2"
 brew "libyaml"
+brew "ansible"
 brew "autoconf"
+brew "awscli"
 brew "composer"
+brew "coreutils"
 brew "dnsmasq", restart_service: true
+brew "dockutil"
+brew "fish"
 brew "libtool"
+brew "libpng"
+brew "git"
+brew "guetzli"
+brew "httpie"
+brew "jpeg"
+brew "imagemagick"
+brew "jpegoptim"
 brew "jq"
 brew "libmaxminddb"
-brew "packer"
-brew "coreutils"
-brew "guetzli"
-brew "jpeg"
-brew "jpegoptim"
-brew "libpng"
+brew "mackup"
+brew "mas"
 brew "mozjpeg"
-brew "imagemagick"
-brew "ansible"
-brew "awscli"
-brew "git"
 brew "mysql", restart_service: true
 brew "nginx", restart_service: true
 brew "node"
+brew "packer"
+brew "php", restart_service: true
+brew "php@7.1"
+brew "php@7.2"
+brew "pkg-config"
 brew "redis", restart_service: true
 brew "rsync"
 brew "siege"
 brew "tree"
 brew "wget"
 brew "yarn"
-brew "mackup"
-brew "dockutil"
-brew "httpie"
-brew "pkg-config"
-
-
-# Casks
+cask "alfred"
 cask "aws-vault"
-cask "phpstorm"
-cask "visual-studio-code"
-cask "tableplus"
-cask "vagrant"
-cask "virtualbox"
+cask "backblaze"
+cask "dropbox"
+cask "firefox"
+cask "font-fira-code"
+cask "font-hack-nerd-font"
+cask "font-roboto"
+cask "google-chrome"
+cask "hammerspoon"
 cask "iterm2"
+cask "karabiner-elements"
+cask "opera"
+cask "phpstorm"
+cask "postman"
 cask "skype"
 cask "slack"
-cask "google-chrome"
-cask "firefox"
-cask "opera"
+cask "tableplus"
 cask "tunnelblick"
-cask "postman"
-cask "karabiner-elements"
-cask "hammerspoon"
-cask "alfred"
-cask "dropbox"
-
-# Fonts
-cask "font-fira-code"
-cask "font-roboto"
-cask "font-hack-nerd-font"
-
-
-# Appstore Apps (Mas)
+cask "vagrant"
+cask "virtualbox"
+cask "visual-studio-code"
+mas "Affinity Designer", id: 824171161
 mas "Keka", id: 470158793
-mas "Xcode", id: 497799835
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft Word", id: 462054704
-mas "Affinity Designer", id: 824171161
+mas "Xcode", id: 497799835
