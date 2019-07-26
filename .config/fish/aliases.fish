@@ -4,8 +4,8 @@
 alias edit_fish "editor ~/.config/fish/"
 alias edit_hammerspoon "editor ~/.config/hammerspoon/"
 alias edit_karabiner "editor ~/.config/karabiner/"
-alias edit_macos "editor ~/.config/dotfiles/init/.macos"
-alias edit_macdock "editor ~/.config/dotfiles/init/.macdock"
+alias edit_macos "editor ~/.config/dotfiles/prefs/macos/.macos"
+alias edit_macdock "editor ~/.config/dotfiles/prefs/macos/.macdock"
 
 ##############################################################################
 # Git Stuff
