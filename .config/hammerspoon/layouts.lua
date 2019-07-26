@@ -2,8 +2,6 @@
 local activeDisplay = hs.screen.mainScreen()
 
 --- set up layout grid
-hs.layout.left60 = { x = 0, y = 0, w = 0.6, h = 1 }
-hs.layout.right40 = { x = 0.6, y = 0, w = 0.4, h = 1 }
 hs.layout.topRight = { x = 0.5, y = 0, w = 0.5, h = 0.5 }
 hs.layout.bottomRight = { x = 0.5, y = 0.5, w = 0.5, h = 0.5 }
 
@@ -26,11 +24,11 @@ local devApps = {
 }
 
 local devLayout = {
-  { 'Code', nil, activeDisplay, hs.layout.left60, nil, nil },
-  { 'PhpStorm', nil, activeDisplay, hs.layout.left60, nil, nil },
-  { 'TablePlus', nil, activeDisplay, hs.layout.right40, nil, nil },
-  { 'iTerm2', nil, activeDisplay, hs.layout.right40, nil, nil },
-  { 'Google Chrome', nil, activeDisplay, hs.layout.right40, nil, nil },
+  { 'Code', nil, activeDisplay, hs.layout.left50, nil, nil },
+  { 'PhpStorm', nil, activeDisplay, hs.layout.left50, nil, nil },
+  { 'TablePlus', nil, activeDisplay, hs.layout.right50, nil, nil },
+  { 'iTerm2', nil, activeDisplay, hs.layout.right50, nil, nil },
+  { 'Google Chrome', nil, activeDisplay, hs.layout.right50, nil, nil },
 }
 hs.hotkey.bind(hyper, '1', function() toggleWorkspace(devApps, devLayout) end)
 

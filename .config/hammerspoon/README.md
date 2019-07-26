@@ -10,7 +10,6 @@ Key | Action
 delete | Lock Screen
 
 ## Launch Apps
-
 Key | App
 ---|---
 c | Google Chrome
@@ -20,6 +19,7 @@ m | Mail
 return | System Preferences
 z | iTunes
 x | Screen Sharing
+; | Screenshot.app
 e | TextEdit
 \ | Skype
 ] | Messages
@@ -30,30 +30,21 @@ t | iTerm2
 
 
 ## Workspace Management
-Workspaces are mapped to `hyper + fn` + `key`:
-
 Key | Action
 ---|---
-F1 | development
-F2 | communication
+1 | development
+2 | communication
 
 
 ## Window Management
-
 Key | Action
 ---|---
-← | Move window left
-→ | Move window right
-↑ | Move window up
-↓ | Move window down
-i | Decrease height
-k | Increase height
-j | Decrease width
-l | Increase width
-2 | Set 2x2 grid
-3 | Set 3x3 grid
-4 | Set 4x4 grid
+i | Fit window left
+o | Fit window right
+8 | Fit window upper left
+9 | Fit window upper right
+k | Fit window lower left
+l | Fit window lower right
 / | To next screen
-; | Snap focused to grid
 ' | Snap all to grid
 (space) | Maximize window
