@@ -66,6 +66,12 @@ if [ ! -d ~/.config/valet/Drivers/valet-global-env ]; then
   cd ~
 fi
 
+# copy valet config
+echo "Copying config.json to Valet"
+if [ ! -f ~/.config/valet/config.json ]; then
+  cp ~/.config/dotfiles/prefs/valet/* ~/.config/valet
+fi
+
 # installing PHP extensions
 
 # create pecl dir if it doesn't exist
@@ -144,6 +150,13 @@ return [
 
 ];
 VALET
+
+echo "Cloning Valet Dashboard"
+if [ ! -d ~/Sites/valet-dashboard ]; then
+  cd ~/Sites
+  git clone https://github.com/madsem/valet-dashboard.git
+  cd ~
+fi
 
 echo "Creating ~/Code"
 if [ ! -d ~/Code/ ]; then
