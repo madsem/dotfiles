@@ -7,7 +7,7 @@ function brew -a cmd
     if contains install $argv
         or contains uninstall $argv
         
-        command brew bundle dump --force --file=~/.config/dotfiles/prefs/Homebrew/Brewfile
+        command brew bundle dump --force --file=~/.config/dotfiles/prefs/brew/Brewfile
 
         echo "Your Brewfile was automatically updated!"
 

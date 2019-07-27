@@ -101,7 +101,7 @@ The following automation is included:
 - Extensions for VS Code
 - Mackup backup
 
-The `brew` command is wrapped in a fish function, every time something is installed or uninstalled, a new `Brewfile` is dumped at `~/.config/dotfiles/prefs/Homebrew/Brewfile`.  
+The `brew` command is wrapped in a fish function, every time something is installed or uninstalled, a new `Brewfile` is dumped at `~/.config/dotfiles/prefs/brew/Brewfile`.  
 
 Launchd Agents are running to:  
 Mackup backup once every day at 10pm.  

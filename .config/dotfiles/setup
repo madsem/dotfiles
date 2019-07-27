@@ -38,7 +38,7 @@ sudo softwareupdate -i -a
 echo "Brewing..."
 brew update
 brew tap homebrew/bundle
-brew bundle --file=~/.config/dotfiles/prefs/Homebrew/Brewfile
+brew bundle --file=~/.config/dotfiles/prefs/brew/Brewfile
 brew cleanup
 
 ################################################################################
@@ -98,7 +98,7 @@ yes '' | pecl install -f redis
 #
 ################################################################################
 echo "Installing VS Code Extensions"
-for EXT in $(cat ~/.config/dotfiles/prefs/VisualStudioCode/extensions); do
+for EXT in $(cat ~/.config/dotfiles/prefs/code/extensions); do
   code --install-extension $EXT
 done
 
