@@ -1,6 +1,6 @@
 # override aws cli to use aws-vault automatically
 # based on https://github.com/oh-my-fish/plugin-aws
-function aws -a cmd -d 'Wrapper For AWS CLI to use AWS-Vault automatically' --wraps aws
+function aws -a cmd -d 'Wrapper For AWS CLI to use AWS-Vault automatically'
 
     switch "$cmd"
         case profile
@@ -21,17 +21,16 @@ function aws -a cmd -d 'Wrapper For AWS CLI to use AWS-Vault automatically' --wr
             command sed -n -e 's/^\[\(.*\)\]/\1/p' "$HOME/.aws/config"
 
         case '*'
-            set -l profile "$AWS_PROFILE"
-            or set -l profile "$AWS_DEFAULT_PROFILE"
-            if test -z "$profile"
+
+            if test -z $AWS_PROFILE
                 echo "No active profile found"
                 echo "Set a profile with: aws profile <profile>"
                 echo "See available profiles with: aws profiles"
 
                 return 1
+            else
+                eval aws-vault exec $AWS_PROFILE -- (which aws) "$argv"
             end
-
-            eval aws-vault exec "$profile" -- (which aws) "$argv"
     end
 
 end
