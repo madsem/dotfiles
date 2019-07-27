@@ -145,7 +145,8 @@ $ aws_export_ssh_key <path> <region>
 
 # If a private key got compromised, or needs to be rotated
 # delete it from AWS secrets manager (Does not delete the files locally)
-$ aws_delete_ssh_key <path> <region>
+# by default it deletes keys with a 30 days restore window, use --force to delete without restore.
+$ aws_delete_ssh_key <path> <region> [-f --force]
 ```
 
 
