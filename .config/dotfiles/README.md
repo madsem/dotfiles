@@ -186,3 +186,7 @@ source_profile=master_read_only
 role_arn=arn:aws:iam::YYYYYYYYYYYYY:role/admin
 ```
 
+
+
+# Resources
+- https://github.com/herrbischoff/awesome-macos-command-line
