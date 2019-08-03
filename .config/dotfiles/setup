@@ -72,25 +72,11 @@ if [ ! -f ~/.config/valet/config.json ]; then
   cp ~/.config/dotfiles/prefs/valet/* ~/.config/valet
 fi
 
-# installing PHP extensions
-
 # create pecl dir if it doesn't exist
 # ref: https://github.com/Homebrew/homebrew-core/issues/41081#issuecomment-503256871
 if [ ! -d /usr/local/lib/php/pecl ]; then
   mkdir -p /usr/local/lib/php/pecl
 fi
-
-echo "Install imagick, accepting defaults"
-yes '' | pecl install -f imagick
-
-echo "Install memcached, accepting defaults"
-yes '' | pecl install -f memcached
-
-echo "Install xdebug, accepting defaults"
-yes '' | pecl install -f xdebug
-
-echo "Install Phpredis, accepting defaults"
-yes '' | pecl install -f redis
 
 ################################################################################
 #
@@ -124,7 +110,7 @@ curl -L https://iterm2.com/shell_integration/fish \
 
 ################################################################################
 #
-# Creating directories & Files
+# Creating directories & files
 #
 ################################################################################
 echo "Creating ~/Sites"
