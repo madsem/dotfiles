@@ -20,7 +20,8 @@ local devApps = {
     'PhpStorm',
     'iTerm',
     'TablePlus',
-    'Google Chrome'
+    'Google Chrome',
+    'Docker'
 }
 
 local devLayout = {
