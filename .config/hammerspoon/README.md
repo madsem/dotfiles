@@ -14,7 +14,7 @@ Key | App
 ---|---
 c | Google Chrome
 s | Safari
-o | Opera
+p | Opera
 f | Finder
 m | Mail
 return | System Preferences
