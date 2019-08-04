@@ -26,6 +26,13 @@ for entry in $entries
     set -gx PATH $entry $PATH
 end
 
+# activate Docker shell completion
+set -l dockerCompletions /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion
+if status --is-login
+    and test -e $dockerCompletions
+    source $dockerCompletions
+end
+
 
 # Fisher Package Manager
 # https://github.com/jorgebucaran/fisher
@@ -39,7 +46,7 @@ end
 ##
 # Fish syntax highlighting - oceanic material color style
 ##
-set -g fish_color_autosuggestion '555'  'brblack'
+set -g fish_color_autosuggestion '555' 'brblack'
 set -g fish_color_cancel -r
 set -g fish_color_command 82aaff --bold
 set -g fish_color_comment red
@@ -47,7 +54,7 @@ set -g fish_color_cwd green
 set -g fish_color_cwd_root red
 set -g fish_color_end brmagenta
 set -g fish_color_error brred
-set -g fish_color_escape 'bryellow'  '--bold'
+set -g fish_color_escape 'bryellow' '--bold'
 set -g fish_color_history_current --bold
 set -g fish_color_host normal
 set -g fish_color_match --background=brblue
@@ -56,8 +63,8 @@ set -g fish_color_operator f78c6c
 set -g fish_color_param eeffe3
 set -g fish_color_quote c3e88d
 set -g fish_color_redirection brblue
-set -g fish_color_search_match 'bryellow'  '--background=brblack'
-set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
+set -g fish_color_search_match 'bryellow' '--background=brblack'
+set -g fish_color_selection 'white' '--bold' '--background=brblack'
 set -g fish_color_user yellow
 set -g fish_color_valid_path --underline
 
