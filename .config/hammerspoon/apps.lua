@@ -2,7 +2,7 @@
 --- browsers
 hs.hotkey.bind(hyper, "c", function() toggleApplication("Google Chrome") end)
 hs.hotkey.bind(hyper, "s", function() toggleApplication("Safari") end)
-hs.hotkey.bind(hyper, "p", function() toggleApplication("Opera") end)
+hs.hotkey.bind(hyper, "a", function() toggleApplication("Opera") end)
 
 --- general mac
 hs.hotkey.bind(hyper, "f", function() toggleApplication("Finder") end)
