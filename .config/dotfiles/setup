@@ -53,7 +53,7 @@ export PATH=$PATH:~/.composer/vendor/bin
 
 # Laravel Installer, Valet etc.
 echo "Creating Laravel Installers"
-composer global require laravel/installer laravel/spark-installer laravel/valet
+composer global require laravel/installer laravel/spark-installer laravel/valet laravel/vapor-cli
 
 # run valet installer
 echo "Installing Laravel Valet"
