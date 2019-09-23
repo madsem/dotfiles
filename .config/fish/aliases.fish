@@ -1,6 +1,7 @@
 ##############################################################################
 # Manage Important Dotfiles & Configs Easily
 ##############################################################################
+alias edit_dot "editor ~/.config/dotfiles/"
 alias edit_fish "editor ~/.config/fish/"
 alias edit_hammerspoon "editor ~/.config/hammerspoon/"
 alias edit_karabiner "editor ~/.config/karabiner/"
