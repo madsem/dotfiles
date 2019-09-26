@@ -1,5 +1,5 @@
 # open valet config repository with code editor
-function valet_config
+function edit_valet
 
     set -l valet "$HOME/.config/valet/"
     if not test -d $valet
@@ -7,5 +7,5 @@ function valet_config
         return 1
     end
     
-    eval ( editor valet )
+    $CODE_EDITOR $valet
 end

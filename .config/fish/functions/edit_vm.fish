@@ -1,5 +1,5 @@
 # open custom vagrant box config repository with code editor
-function vm_config
+function edit_vm
 
     set -l vm "$HOME/.config/dotfiles/vagrant"
     if not test -e $vm"/Vagrantfile"
@@ -7,5 +7,5 @@ function vm_config
         return 1
     end
     
-    eval ( cd $vm and editor . )
+    eval ( cd $vm and $CODE_EDITOR . )
 end
