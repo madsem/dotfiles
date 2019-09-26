@@ -6,8 +6,8 @@
 set -gx EDITOR nano
 
 # my preferred code editor
-# use the CFBundleIdentifier (found in info.plist of package contents)
-set -gx CODE_EDITOR com.microsoft.VSCode
+# command-line shortcut to open editor
+set -gx CODE_EDITOR code
 
 # Set Locale
 set -gx LC_ALL en_US.UTF-8
