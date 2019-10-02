@@ -9,7 +9,6 @@ brew "autoconf"
 brew "awscli"
 brew "composer"
 brew "coreutils"
-brew "dnsmasq", restart_service: true
 brew "dockutil"
 brew "fish"
 brew "libtool"
@@ -24,7 +23,6 @@ brew "libmaxminddb"
 brew "mackup"
 brew "mas"
 brew "mozjpeg"
-brew "nginx", restart_service: true
 brew "node"
 brew "packer"
 brew "php", restart_service: true

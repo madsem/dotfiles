@@ -51,26 +51,9 @@ brew cleanup
 echo "Adding Composer To PATH"
 export PATH=$PATH:~/.composer/vendor/bin
 
-# Laravel Installer, Valet etc.
-echo "Creating Laravel Installers"
-composer global require laravel/installer laravel/spark-installer laravel/valet laravel/vapor-cli
-
-# run valet installer
-echo "Installing Laravel Valet"
-valet install
-
-echo "Cloning custom Global-Env Valet driver"
-if [ ! -d ~/.config/valet/Drivers/valet-global-env ]; then
-  cd ~/.config/valet/Drivers
-  git clone https://github.com/madsem/valet-global-env.git
-  cd ~
-fi
-
-# copy valet config
-echo "Copying config.json to Valet"
-if [ ! -f ~/.config/valet/config.json ]; then
-  cp ~/.config/dotfiles/prefs/valet/* ~/.config/valet
-fi
+# Global Composer Packages
+echo "Downloading Global Composer Packages"
+composer global require laravel/installer laravel/spark-installer laravel/vapor-cli
 
 # create pecl dir if it doesn't exist
 # ref: https://github.com/Homebrew/homebrew-core/issues/41081#issuecomment-503256871
@@ -116,32 +99,6 @@ curl -L https://iterm2.com/shell_integration/fish \
 echo "Creating ~/Sites"
 if [ ! -d ~/Sites/ ]; then
   mkdir ~/Sites/
-fi
-
-echo "Creating config file for Global-Env Valet driver"
-cat <<'VALET' >~/Sites/.valet-env.php
-<?php
-
-/**
- * global ENV vars
- * Requires custom ValetDriver
- * https://github.com/madsem/global-env-valet-driver
- **/
-
-return [
-
-	'*' => [
-		'key' => 'value',
-	],
-
-];
-VALET
-
-echo "Cloning Valet Dashboard"
-if [ ! -d ~/Sites/valet-dashboard ]; then
-  cd ~/Sites
-  git clone https://github.com/madsem/valet-dashboard.git
-  cd ~
 fi
 
 echo "Creating ~/Code"
