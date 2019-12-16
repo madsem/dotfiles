@@ -28,6 +28,7 @@ brew "packer"
 brew "php", restart_service: true
 brew "pkg-config"
 brew "rsync"
+brew "ruby"
 brew "siege"
 brew "tree"
 brew "wget"
