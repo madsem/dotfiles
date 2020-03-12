@@ -38,7 +38,6 @@ cask "aws-vault"
 cask "backblaze"
 cask "docker"
 cask "dropbox"
-cask "encryptme"
 cask "firefox"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
@@ -55,6 +54,7 @@ cask "skype"
 cask "slack"
 cask "tableplus"
 cask "visual-studio-code"
+cask "windscribe"
 mas "Affinity Designer", id: 824171161
 mas "Keka", id: 470158793
 mas "Microsoft Excel", id: 462058435
