@@ -4,6 +4,11 @@ hyper = { "cmd", "alt", "ctrl", "shift" }
 -- log stuff if needed
 log = hs.logger.new('init','debug')
 
+--- Install Spoons
+hs.loadSpoon('SpoonInstall')
+spoon.SpoonInstall.use_syncinstall = true
+Install = spoon.SpoonInstall
+
 -- launchOrFocus apps, or activate / hide.
 --- windowTitle (optional): if app has different name than title (Like visual studio code)
 function toggleApplication(name, windowTitle)
@@ -26,6 +31,21 @@ function toggleApplication(name, windowTitle)
   hs.application.launchOrFocus(name)
 end
 
+function stopApp(name)
+  app = hs.application.get(name)
+  if app and app:isRunning() then
+    app:kill()
+  end
+end
+
+function forceKillProcess(name)
+  hs.execute("pkill " .. name)
+end
+
+function startApp(name)
+  hs.application.open(name)
+end
+
 --- lock screen
 hs.hotkey.bind(hyper, "delete", function() hs.caffeinate.lockScreen(); end)
 
@@ -34,4 +54,5 @@ require "grids"
 require "apps"
 require "layouts"
 require "watchers"
+require "vpn"
 

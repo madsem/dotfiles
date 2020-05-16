@@ -11,7 +11,7 @@ function reloadConfig(files)
   end
 end
 myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.config/hammerspoon/", reloadConfig):start()
-hs.alert.show("Hammerspoon loves config, yummy...")
+hs.notify.show("Hammerspoon", "Ate tasty new config...", "")
 
 --- watch applications
 function applicationWatcher(appName, eventType, appObject)
@@ -35,3 +35,4 @@ function muteOnWake(eventType)
   end
 caffeinateWatcher = hs.caffeinate.watcher.new(muteOnWake)
 caffeinateWatcher:start()
+
