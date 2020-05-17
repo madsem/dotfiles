@@ -12,7 +12,7 @@ delete | Lock Screen
 ## Launch Apps
 Key | App
 ---|---
-c | Google Chrome
+g | Google Chrome
 s | Safari
 a | Opera
 f | Finder
@@ -24,10 +24,11 @@ x | Screen Sharing
 e | TextEdit
 \ | Skype
 ] | Messages
-v | Visual Studio Code
+c | Visual Studio Code
 p | PhpStorm
 d | TablePlus
 t | iTerm2
+v | Windscribe VPN
 
 
 ## Workspace Management
