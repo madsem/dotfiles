@@ -8,7 +8,12 @@ local function toggleVpn(prev_ssid, new_ssid)
         do return end
     end
 
-    if new_ssid == "0o 5GHz" or new_ssid == "0o" then
+    if new_ssid == "0o 5GHz" 
+        or new_ssid == "0o" 
+        or new_ssid == "0o VPN 5GHz" 
+        or new_ssid == "0o VPN 2.4/5GHz" 
+        or new_ssid == "0o VPN 2.4GHz" 
+    then
         stopApp(vpn)
     else
         --- (Re-) start Windscribe, 
