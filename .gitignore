@@ -1,5 +1,4 @@
 .dotfiles # prevent recursion issues
-.idea
 .DS_Store
 .secrets
 .ssh

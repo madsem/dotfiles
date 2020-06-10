@@ -53,6 +53,7 @@ cask "postman"
 cask "skype"
 cask "slack"
 cask "tableplus"
+cask "tinkerwell"
 cask "visual-studio-code"
 cask "windscribe"
 mas "Affinity Designer", id: 824171161
