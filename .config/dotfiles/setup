@@ -53,7 +53,7 @@ export PATH=$PATH:~/.composer/vendor/bin
 
 # Global Composer Packages
 echo "Downloading Global Composer Packages"
-composer global require laravel/installer laravel/spark-installer laravel/vapor-cli
+composer global require hirak/prestissimo laravel/installer laravel/spark-installer laravel/vapor-cli
 
 # create pecl dir if it doesn't exist
 # ref: https://github.com/Homebrew/homebrew-core/issues/41081#issuecomment-503256871

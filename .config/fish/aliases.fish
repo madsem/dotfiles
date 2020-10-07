@@ -13,12 +13,9 @@ alias edit_macdock "$CODE_EDITOR ~/.config/dotfiles/prefs/macos/.macdock"
 ##############################################################################
 alias nope "git reset --hard && git clean -df"
 alias gs "git status"
-alias gl "git log --graph"
-alias gp "git push"
+alias gl "git log --oneline"
 alias gaa "git add ."
-alias gc "git commit -m "
-alias gco "git checkout "
-alias master "git checkout master"
+alias push 'git push origin (git branch --show-current)'
 
 ##############################################################################
 # General Aliases
@@ -26,7 +23,7 @@ alias master "git checkout master"
 alias cask "brew cask"
 
 # Get macOS Software Updates, update Homebrew, yarn, composer, fisher and their installed packages
-alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; yarn global upgrade; composer global update; fisher self-update; fisher"
+alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; composer global update; fisher self-update; fisher"
 
 # show disk information of all mounted volumes
 alias diskspace "df -P -kHl"
