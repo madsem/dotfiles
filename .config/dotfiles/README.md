@@ -16,12 +16,16 @@ Feel free to clone it, use it, take it apart or change it to your liking. I use 
 - moar...
 
 # Install:
-**For moving existing dotfiles to a new machine - Make sure that:**
-- [ ] Mackup's latest Dropbox backup contains everything.
-- [ ] Local Keychains were moved to the new machine (Airdrop or so).
-- [ ] Everything else that is important, is in iCloud.
 
-1. First, use the remote install script, which automatically takes care of installing `git` & cloning the repo as a bare repository to `~/.dotfiles`, then rsyncs existing files in your `$HOME` directory with the dotfiles to avoid conflicts.  
+### Before setting up a new machine - Make sure that:  
+- [ ] Mackup's latest Dropbox backup contains everything.
+- [ ] Local `Login`, `System` and other Keychains were moved to the new machine (Airdrop).
+    - @see https://support.apple.com/guide/keychain-access/copy-keychains-kyca1121/mac
+- [ ] Everything else that is important, is in iCloud.  
+
+  
+### After completing the above steps:
+1. Use the remote install script, which automatically takes care of installing `git` & cloning the repo as a bare repository to `~/.dotfiles`, then rsyncs existing files in your `$HOME` directory with the dotfiles to avoid conflicts.  
 ```shell
 $ bash -c "`curl -fsSL https://raw.githubusercontent.com/madsem/dotfiles/master/.config/dotfiles/remote-install.sh`"
 ```

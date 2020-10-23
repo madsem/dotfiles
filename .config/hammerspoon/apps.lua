@@ -24,4 +24,4 @@ hs.hotkey.bind(hyper, "d", function() toggleApplication("TablePlus") end)
 hs.hotkey.bind(hyper, "t", function() toggleApplication("iTerm") end)
 
 --- vpn
-hs.hotkey.bind(hyper, "v", function() toggleApplication("Windscribe") end)
+hs.hotkey.bind(hyper, "v", function() toggleApplication("WireGuard") end)

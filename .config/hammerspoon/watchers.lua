@@ -11,7 +11,7 @@ function reloadConfig(files)
   end
 end
 myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.config/hammerspoon/", reloadConfig):start()
-hs.notify.show("Hammerspoon", "Ate tasty new config...", "")
+hs.alert("Config tasty, Hammerspoon happy!")
 
 --- watch applications
 function applicationWatcher(appName, eventType, appObject)

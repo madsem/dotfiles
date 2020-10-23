@@ -54,5 +54,5 @@ require "grids"
 require "apps"
 require "layouts"
 require "watchers"
-require "vpn"
+require "wifi"
 

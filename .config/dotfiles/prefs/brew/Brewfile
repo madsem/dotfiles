@@ -54,9 +54,9 @@ cask "slack"
 cask "tableplus"
 cask "tinkerwell"
 cask "visual-studio-code"
-cask "windscribe"
 mas "Affinity Designer", id: 824171161
 mas "Keka", id: 470158793
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft Word", id: 462054704
+mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
