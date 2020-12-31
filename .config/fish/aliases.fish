@@ -18,6 +18,7 @@ alias gaa "git add ."
 alias push 'git push origin (git branch --show-current)'
 alias pull 'git pull origin master'
 alias fetch 'git fetch origin master'
+alias master 'git checkout master'
 
 
 ##############################################################################
