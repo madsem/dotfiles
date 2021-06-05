@@ -9,7 +9,7 @@
     <array>
         <string>/usr/local/bin/fish</string>
         <string>-C</string>
-        <string>code --list-extensions | cat ~/.config/dotfiles/prefs/code/extensions</string>
+        <string>code --list-extensions > ~/.config/dotfiles/prefs/code/extensions</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>

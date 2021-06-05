@@ -27,10 +27,11 @@ brew "mackup"
 brew "mas"
 brew "mozjpeg"
 brew "node"
-brew "php", restart_service: true, link: false
+brew "php", restart_service: true
 brew "php@7.4"
 brew "pkg-config"
 brew "rsync"
+brew "starship"
 brew "tree"
 brew "wget"
 cask "alfred"
