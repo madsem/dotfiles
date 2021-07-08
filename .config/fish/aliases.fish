@@ -21,15 +21,16 @@ alias gs "git status"
 alias gl "git log --oneline"
 alias gaa "git add ."
 alias push 'git push origin (git branch --show-current)'
-alias pull 'git pull origin master'
+alias pull 'git pull origin main'
 alias fetch 'git fetch origin'
-alias master 'git checkout master'
+alias master 'git checkout main'
+alias main 'git checkout main'
 
 
 ##############################################################################
 # General Aliases
 ##############################################################################
-alias cask "brew cask"
+alias 11ty "npx @11ty/eleventy "
 
 # Get macOS Software Updates, update Homebrew, yarn, composer, fisher and their installed packages
 alias update="sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; composer global update; fisher self-update; fisher"
